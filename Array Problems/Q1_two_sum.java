@@ -45,7 +45,7 @@ public class Q1_two_sum {
              arr[1] = i;
           return arr; }
   }
-        
+  
     return arr;
     }
 }                                   
