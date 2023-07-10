@@ -17,6 +17,7 @@
 
 
 
+
 public class Q1491_average_salary {
     
     public double average(int[] salary) {
@@ -34,3 +35,4 @@ public class Q1491_average_salary {
     return (double)(sum - max - min) / (n - 2);
 }
 }
+
