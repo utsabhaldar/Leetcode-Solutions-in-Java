@@ -16,6 +16,7 @@
 // All the integers of salary are unique.
 
 
+
 public class Q1491_average_salary {
     
     public double average(int[] salary) {
