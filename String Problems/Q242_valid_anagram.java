@@ -47,3 +47,16 @@ public class Q242_valid_anagram {
             return true;
         }
 }
+
+// approach 2
+// class Solution {
+//     public boolean isAnagram(String s, String t) {
+//         char[] sChars = s.toCharArray();
+//         char[] tChars = t.toCharArray();
+
+//         Arrays.sort(sChars);
+//         Arrays.sort(tChars);
+
+//         return Arrays.equals(sChars, tChars);
+//     }
+// }
