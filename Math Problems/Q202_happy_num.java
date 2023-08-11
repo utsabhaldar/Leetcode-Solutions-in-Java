@@ -32,6 +32,11 @@
 
 
 
+
+
+// Time Complexity = O(1)
+// Space Complexity = O(1)
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -63,6 +68,9 @@ public class Q202_happy_num {
 
 
 // Approach 2
+
+// Time complexity: O(N)
+// Space complexity: O(1)
 
 // import java.util.LinkedList;
 
