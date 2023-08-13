@@ -26,7 +26,6 @@
 // Space complexity: O(1)
 public class Q485_max_consecutive_ones {
     public int findMaxConsecutiveOnes(int[] nums) {
-        int[] arr = new int[nums.length-1];
         int count = 0;
         int n = 0;
         for(int i = 0; i< nums.length; i++){
