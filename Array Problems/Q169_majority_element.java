@@ -30,13 +30,15 @@
 
 // Optimal Approach
 
+import java.util.Arrays;
+
 public class Q169_majority_element {
     
 }
 
 
 
-// Normal approach
+// Normal approach 1
 
 // class Solution {
 //     public int majorityElement(int[] nums) {
@@ -48,3 +50,13 @@ public class Q169_majority_element {
 //         return 0;
 //     }
 // }
+
+// Normal approach 2
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        return nums[n/2];
+    }
+}
