@@ -29,11 +29,19 @@
 
 
 // Optimal Approach
-
-import java.util.Arrays;
-
+// Time:O(n)
 public class Q169_majority_element {
-    
+    public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int cnt=0;
+        int el = nums[0];
+        for(int i=0; i<n; i++){
+            if(cnt++ == 0) el = nums[i];
+            if(nums[i] == el) cnt++;
+            else cnt--;
+        }
+        return el;
+    }
 }
 
 
@@ -53,10 +61,10 @@ public class Q169_majority_element {
 
 // Normal approach 2
 
-class Solution {
-    public int majorityElement(int[] nums) {
-        int n = nums.length;
-        Arrays.sort(nums);
-        return nums[n/2];
-    }
-}
+// class Solution {
+//     public int majorityElement(int[] nums) {
+//         int n = nums.length;
+//         Arrays.sort(nums);
+//         return nums[n/2];
+//     }
+// }
