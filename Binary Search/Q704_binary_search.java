@@ -28,7 +28,7 @@
 
 
 // Time: O(log N base 2)
-public class Q703_binary_search {
+public class Q704_binary_search {
 
     static int bs(int[] nums, int target, int low, int high){
         if(low>high) return -1;
