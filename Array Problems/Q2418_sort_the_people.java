@@ -34,7 +34,7 @@ import java.util.Map;
 public class Q2418_sort_the_people {
     public String[] sortPeople(String[] n, int[] h) {
         int l=h.length;
-        Map<Integer,String> map=new HashMap();
+        Map<Integer,String> map=new HashMap<>();
         for(int i=0;i<l;i++)
             map.put(h[i],n[i]);
         Arrays.sort(h);
