@@ -28,7 +28,7 @@ import java.util.PriorityQueue;
 public class Q847_shortest_path_visiting_all_nodes {
     public int shortestPathLength(int[][] graph) {
         ArrayList<ArrayList<Integer>> adjacentList = new ArrayList<>();
-        PriorityQueue<Integer> queue = new PriorityQueue<>((a,b) -> adjacentList.get(a).size() -
+        PriorityQueue<Integer> queue = new PriorityQueue<>((a,b) -> adjacentList.get(a).size() - 
                 adjacentList.get(b).size());
         int n = graph.length;
 
