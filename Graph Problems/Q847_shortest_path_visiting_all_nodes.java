@@ -22,36 +22,24 @@
 
 
 // Optimal Approach
-import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 public class Q847_shortest_path_visiting_all_nodes {
     public int shortestPathLength(int[][] graph) {
-        ArrayList<ArrayList<Integer>> adjacentList = new ArrayList<>();
-        PriorityQueue<Integer> queue = new PriorityQueue<>((a,b) -> adjacentList.get(a).size() - 
-                adjacentList.get(b).size());
         int n = graph.length;
-
-        for(int i=0;i < n;i++) {
-            ArrayList<Integer> list = new ArrayList<>();
-            for(int node : graph[i]) {
-                list.add(node);
-            }
-            adjacentList.add(list);
-            queue.add(i);
-        }
         int minLen = Integer.MAX_VALUE;
-        while(!queue.isEmpty()) {
-            int start = queue.poll();
+        
+        for (int i = 0; i < graph.length; i++) {
+            
             int[] visited = new int[n];
-            getLen(adjacentList, visited, start);
+            getLen(graph, visited, i);
             if(!isValid(visited)) continue;
             minLen = Math.min(calLen(visited), minLen);
         }
 
         return minLen != Integer.MIN_VALUE ? minLen : -1;
-
     }
+    
     private int calLen(int[] visited) {
         int len = 0;
         for(int curr : visited) {
@@ -67,21 +55,23 @@ public class Q847_shortest_path_visiting_all_nodes {
         return true;
     }
 
-    private void getLen(ArrayList<ArrayList<Integer>> adjacentList, int[] visited, int index) {
+    private void getLen(int[][] graph, int[] visited, int index) {
         visited[index]++;
         if(isValid(visited)) return;
-        PriorityQueue<Integer> queue = new PriorityQueue<>((a,b) -> adjacentList.get(a).size() -
-                adjacentList.get(b).size());
-        queue.addAll(adjacentList.get(index));
+        PriorityQueue<Integer> queue = new PriorityQueue<>((a,b) -> graph[a].length -
+                graph[b].length);
+        for (int i = 0; i < graph[index].length; i++) {
+            queue.add(graph[index][i]);
+        }
 
         while(!queue.isEmpty()) {
             int curr = queue.poll();
             if(queue.size() > 0 && visited[curr] > 0) {
                 continue;
             }
-            if(!isValid(visited) && visited[curr] < adjacentList.get(curr).size()) {
-                getLen(adjacentList, visited, curr);
+            if(!isValid(visited) && visited[curr] < graph[curr].length) {
+                getLen(graph, visited, curr);
             }
-        } 
+        }
     }
 }
