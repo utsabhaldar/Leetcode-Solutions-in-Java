@@ -30,34 +30,41 @@
 // Time Complexity: O(N)+O(N)+O(N)
 // Space Complexity: O(1)
 public class Q138_copy_LL_with_next_and_random_pointer {
-    /*
-        public Node copyRandomList(Node head) {
-        if(head == null) return null;
-        
-        Node temp = head;
-        while(temp != null){
-            Node n = new Node(temp.val);
-            n.next = temp.next;
-            temp.next = n;
-            temp = temp.next.next;
+    class Node {
+        int val;
+        Node next;
+        Node random;
+    
+        public Node(int val) {
+            this.val = val;
+            this.next = null;
+            this.random = null;
         }
-
-        Node r = head;
-        while(r != null){
-            if(r.next != null) r.next.random = (r.random != null) ? r.random.next : null;
-            r = r.next.next;
-        }
-
-        Node prev = head.next;
-        Node p = head;
-        Node ans = prev;
-        while(ans != null && p != null){
-            p.next = p.next.next;
-            ans.next = (ans.next != null) ? ans.next.next : ans.next;
-            p = p.next;
-            ans = ans.next;
-        }
-        return prev;
     }
-    */
+    public Node copyRandomList(Node head) {
+    if(head == null) return null;
+    
+    Node temp = head;
+    while(temp != null){
+        Node n = new Node(temp.val);
+        n.next = temp.next;
+        temp.next = n;
+        temp = temp.next.next;
+    }
+    Node r = head;
+    while(r != null){
+        if(r.next != null) r.next.random = (r.random != null) ? r.random.next : null;
+        r = r.next.next;
+    }
+    Node prev = head.next;
+    Node p = head;
+    Node ans = prev;
+    while(ans != null && p != null){
+        p.next = p.next.next;
+        ans.next = (ans.next != null) ? ans.next.next : ans.next;
+        p = p.next;
+        ans = ans.next;
+    }
+    return prev;
+    }
 }
