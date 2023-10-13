@@ -26,9 +26,15 @@
 // Space:O(1)
 public class Q19_remove_nth_node_from_end_LL {
     
-    /*
-      
-        public ListNode removeNthFromEnd(ListNode head, int n) {
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+  
+    public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode s = head;
         ListNode f = head;
         for(int i=0; i<n; i++) f = f.next;
@@ -39,7 +45,5 @@ public class Q19_remove_nth_node_from_end_LL {
         }
         s.next = s.next.next;
         return head;
-        }
-
-    */
+    }
 }
