@@ -34,6 +34,15 @@
 // Time:O(m+n)
 // Space:O(1)
 public class Q160_intersection_of_two_LL {
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
+    
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode l1 = headA, l2 = headB;
         if(l1==null || l2==null) return null;
