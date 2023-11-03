@@ -24,6 +24,7 @@
 
 // Time:O(2n)
 // Space:O(n)
+import java.util.ArrayList;
 import java.util.List;
 
 public class Q1431_kids_max_candies {
