@@ -18,7 +18,7 @@
 
 // Time:O(log n)
 // Space:O(1)
-public class Q154_min_in_rotated_sorted_arr {
+public class Q154_min_in_rotated_sorted_arr_II {
     public int findMin(int[] nums) {
         int n=nums.length;
         int low = 0, high = n-1;
