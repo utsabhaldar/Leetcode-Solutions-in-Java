@@ -13,8 +13,8 @@
 
 
 
-// Time:O(m*m)
-// Space:O(m*n)
+// Time:O(cols * rows)
+// Space:O(cols * rows)
 public class Q498_diagonal_traverse {
     public int[] findDiagonalOrder(int[][] mat) {
         if(mat == null || mat.length ==0) return new int[0];
